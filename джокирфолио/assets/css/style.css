@@ -1,0 +1,1609 @@
+/* ==========================================================================
+   FIGMA PRODUCT DESIGNER PORTFOLIO THEME
+   Strictly following the layout, colors, and components of:
+   "Portfolio - Product Designer Portfolio Website" (by Jayesh Patil)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+:root {
+  /* Figma Signature Colors */
+  --figma-bg: #FFFFFF;
+  --figma-dark: #171717;
+  --figma-dark-card: #202020;
+  --figma-gray-bg: #F2F4F7;
+  --figma-orange: #FD853A;
+  --figma-orange-hover: #e4752f;
+  --figma-orange-light: #FEB273;
+  --figma-orange-bright: #FB6514;
+  --figma-peach-soft: #FFEAD5;
+
+  /* Typography Colors */
+  --text-dark: #171717;
+  --text-heading: #344054;
+  --text-subheading: #1D2939;
+  --text-muted: #667085;
+  --text-light-muted: #98A2B3;
+  --text-white: #FCFCFD;
+
+  /* Borders & Radii */
+  --radius-pill: 9999px;
+  --radius-container: 45px;
+  --radius-card: 28px;
+  --radius-sm: 16px;
+
+  --font-main:"Unbounded", sans-serif;
+  --font-optical-sizing: auto;
+  --font-weight: 275;
+  --font-style: normal;
+  --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--figma-bg);
+  color: var(--text-dark);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.main-wrapper {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+.text-orange {
+  color: var(--figma-orange) !important;
+}
+
+/* ==========================================================================
+   1. NAVBAR (FIGMA CAPSULE BAR - NO BURGER MENU)
+   ========================================================================== */
+.figma-navbar {
+  position: sticky;
+  top: 18px;
+  z-index: 100;
+  width: 100%;
+  max-width: 1298px;
+  min-height: 80px;
+  background: var(--figma-dark);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-pill);
+  padding: 8px 18px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.nav-links-scroll {
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-links-list {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.nav-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: var(--radius-pill);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.nav-pill-btn:hover {
+  background: #232323;
+  color: #ffffff;
+}
+
+.nav-pill-btn.active {
+  background: var(--figma-orange);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Logo in center/side */
+.figma-nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  padding: 0 12px;
+  white-space: nowrap;
+}
+
+.logo-circle-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--figma-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 0.85rem;
+  color: #ffffff;
+}
+
+/* Header Resume CTA */
+.nav-resume-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: var(--radius-pill);
+  background: var(--figma-orange);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.nav-resume-btn:hover {
+  background: var(--figma-orange-hover);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   2. HERO SECTION (THE SIGNATURE FIGMA ARCH + COMPOSITION)
+   ========================================================================== */
+.figma-hero-section {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Top Intro with Hello! badge */
+.hero-intro-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-hello-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 28px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--text-dark);
+  background: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.hero-headline-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.hero-headline-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-title-main {
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-dark);
+  line-height: 1.1;
+}
+
+/* Main Visual Stage Grid (Left Quote + Center Arch Portrait + Right Experience) */
+.hero-stage-grid {
+  width: 100%;
+  max-width: 1280px;
+  display: grid;
+  grid-template-columns: 280px 1fr 240px;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+/* Left Hero Quote */
+.hero-left-quote {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding-left: 10px;
+}
+
+.hero-quote-mark {
+  font-size: 4rem;
+  line-height: 0.8;
+  color: var(--text-heading);
+  font-family: Georgia, serif;
+}
+
+.hero-quote-text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-heading);
+  line-height: 1.5;
+}
+
+/* Center: Signature Peach Arch & Portrait & Logos */
+.hero-center-stage {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 520px;
+}
+
+/* The iconic Figma Peach Arch */
+.hero-arch-dome {
+  position: absolute;
+  bottom: 0;
+  width: 86%;
+  max-width: 540px;
+  height: 380px;
+  background: var(--figma-orange-light);
+  border-radius: 270px 270px 0 0;
+  z-index: 1;
+  box-shadow: 0 20px 50px rgba(254, 178, 115, 0.35);
+}
+
+/* Flying Tech Logos (Hemisphere behind user) */
+.hero-orbit-wrapper {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  z-index: 3; /* Behind user photo (z-index: 5) */
+}
+
+.orbit-badge-figma {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%) translate(var(--tx), var(--ty)) scale(0.1);
+  opacity: 0;
+  filter: blur(6px);
+  will-change: transform, opacity;
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.orbit-badge-figma.is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate(-50%, -50%) translate(var(--tx), var(--ty)) scale(1);
+  transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity 0.6s ease,
+              filter 0.6s ease;
+}
+
+.orbit-badge-figma.is-floating {
+  animation: figmaFloat 4s ease-in-out infinite alternate;
+}
+
+@keyframes figmaFloat {
+  0%   { transform: translate(-50%, -50%) translate(var(--tx), var(--ty)) translateY(0px); }
+  50%  { transform: translate(-50%, -50%) translate(var(--tx), var(--ty)) translateY(-6px); }
+  100% { transform: translate(-50%, -50%) translate(var(--tx), var(--ty)) translateY(5px); }
+}
+
+.badge-figma-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px 8px 10px;
+  background: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.badge-figma-inner:hover {
+  transform: scale(1.12);
+  border-color: var(--figma-orange);
+  box-shadow: 0 14px 28px rgba(253, 133, 58, 0.25);
+}
+
+.badge-figma-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.badge-figma-text {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* Exact coordinates around upper arch - Centered symmetrically around Naruto */
+.orbit-badge-figma[data-tech="html"]  { --tx: -245px; --ty: -10px;  animation-delay: -0.4s; }
+.orbit-badge-figma[data-tech="css"]   { --tx: -210px; --ty: -135px; animation-delay: -1.2s; }
+.orbit-badge-figma[data-tech="js"]    { --tx: -105px; --ty: -225px; animation-delay: -2.0s; }
+.orbit-badge-figma[data-tech="ts"]    { --tx: 105px;  --ty: -225px; animation-delay: -2.8s; }
+.orbit-badge-figma[data-tech="react"] { --tx: 210px;  --ty: -135px; animation-delay: -3.6s; }
+.orbit-badge-figma[data-tech="git"]   { --tx: 245px;  --ty: -10px;  animation-delay: -4.4s; }
+
+/* User Portrait Cutout (Foreground z-index: 5) */
+.hero-portrait-wrap {
+  position: relative;
+  z-index: 5;
+  width: 320px;
+  height: 480px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.hero-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+  filter: drop-shadow(0 16px 30px rgba(0, 0, 0, 0.22));
+  transition: transform 0.3s ease;
+}
+
+.hero-portrait-img:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* Dual Toggle Pill Buttons (In front of arch at bottom) */
+.hero-dual-pills {
+  position: absolute;
+  bottom: 20px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 6px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  gap: 4px;
+}
+
+.dual-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.dual-pill-active {
+  background: var(--text-dark);
+  color: #ffffff;
+}
+
+.dual-pill-outline {
+  background: transparent;
+  color: var(--text-dark);
+}
+
+.dual-pill-outline:hover {
+  background: var(--figma-orange);
+  color: #ffffff;
+}
+
+/* Right Hero Experience */
+.hero-right-exp {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.hero-stars-row {
+  display: flex;
+  gap: 4px;
+  color: var(--figma-orange);
+}
+
+.hero-exp-number {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1;
+}
+
+.hero-exp-label {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   3. MY SERVICES / TECH STACK (FIGMA SIGNATURE DARK CONTAINER)
+   ========================================================================== */
+.figma-dark-container {
+  width: 100%;
+  background: var(--figma-dark);
+  border-radius: var(--radius-container);
+  padding: 80px 60px;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.15);
+}
+
+.figma-dark-bg-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  pointer-events: none;
+  background-image: url('../figma/Frame77.svg');
+  background-size: cover;
+  background-position: center;
+}
+
+.services-top-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.section-heading-dark {
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.services-top-desc {
+  max-width: 540px;
+  font-size: 1.05rem;
+  color: #D0D5DD;
+  line-height: 1.6;
+}
+
+/* Tech Cards Grid in Dark Container */
+.services-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.service-card {
+  background: var(--figma-dark-card);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-card);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--figma-orange);
+  box-shadow: 0 16px 36px rgba(253, 133, 58, 0.15);
+}
+
+.service-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.service-title-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.service-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.service-icon-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.service-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.service-badge {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--figma-orange);
+  background: rgba(253, 133, 58, 0.15);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.service-details-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.service-block-heading {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--figma-orange);
+}
+
+.service-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.service-list li {
+  font-size: 0.9rem;
+  color: #D0D5DD;
+  line-height: 1.5;
+  padding-left: 14px;
+  position: relative;
+}
+
+.service-list li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--figma-orange);
+}
+
+/* ==========================================================================
+   4. WORK EXPERIENCE / CAREER TRAJECTORY (FIGMA DARK CONTAINER)
+   Strictly matches Screenshot_20261012_114442.jpg across Desktop & Mobile
+   ========================================================================== */
+.figma-trajectory-dark {
+  padding: 60px 48px;
+  position: relative;
+}
+
+.trajectory-single-column {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 100%;
+}
+
+.trajectory-dark-card {
+  position: relative;
+  background: #202020;
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 28px 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trajectory-dark-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--figma-orange);
+  box-shadow: 0 16px 36px rgba(253, 133, 58, 0.18);
+}
+
+.trajectory-dark-card.current-step {
+  border-color: rgba(253, 133, 58, 0.65);
+  box-shadow: 0 10px 30px rgba(253, 133, 58, 0.12);
+}
+
+.trajectory-dark-card.goal-step {
+  border-color: var(--figma-orange);
+  box-shadow: 0 10px 30px rgba(253, 133, 58, 0.2);
+}
+
+.trajectory-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.step-num-pill {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+}
+
+.step-num-pill.active-pill {
+  background: var(--figma-orange);
+  color: #ffffff;
+  border-color: var(--figma-orange);
+  box-shadow: 0 4px 16px rgba(253, 133, 58, 0.45);
+}
+
+.step-num-pill.goal-pill {
+  background: rgba(253, 133, 58, 0.15);
+  color: var(--figma-orange);
+  border-color: var(--figma-orange);
+  box-shadow: 0 4px 16px rgba(253, 133, 58, 0.3);
+}
+
+.step-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.step-badge-tag {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #98A2B3;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.step-badge-tag.active-tag {
+  color: var(--figma-orange);
+}
+
+.step-badge-tag.goal-tag {
+  color: var(--figma-orange);
+}
+
+.step-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+}
+
+.step-subtitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #F2F4F7;
+  margin: 4px 0 10px 0;
+}
+
+.step-desc {
+  font-size: 0.96rem;
+  color: #D0D5DD;
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+
+.step-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.step-dark-tag {
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #EAECF0;
+  transition: var(--transition);
+}
+
+.step-dark-tag:hover {
+  background: rgba(253, 133, 58, 0.18);
+  border-color: var(--figma-orange);
+  color: #ffffff;
+}
+
+/* Mascot Card (Full width inside column) */
+.trajectory-mascot-card {
+  background: #1c1c1c;
+  border-radius: 28px;
+  padding: 36px 32px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+}
+
+.trajectory-mascot-card::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(253, 133, 58, 0.22) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.mascot-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 20px;
+  border-radius: var(--radius-pill);
+  background: rgba(253, 133, 58, 0.16);
+  border: 1px solid rgba(253, 133, 58, 0.4);
+  color: var(--figma-orange);
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.mascot-image-wrap {
+  width: 240px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.mascot-naruto-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 28px rgba(253, 133, 58, 0.4));
+  transition: transform 0.3s ease;
+}
+
+.mascot-naruto-img:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+.mascot-speech-bubble {
+  position: relative;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  padding: 18px 24px;
+  margin-bottom: 24px;
+  max-width: 680px;
+}
+
+.mascot-quote-icon {
+  position: absolute;
+  top: -12px;
+  left: 24px;
+  background: var(--figma-orange);
+  color: #ffffff;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.mascot-quote-text {
+  font-size: 0.95rem;
+  color: #EAECF0;
+  line-height: 1.6;
+  margin: 0;
+  font-style: italic;
+}
+
+.mascot-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 680px;
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mascot-stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mascot-stat-val {
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.mascot-stat-lbl {
+  font-size: 0.78rem;
+  color: #98A2B3;
+}
+
+.mascot-stat-lbl {
+  font-size: 0.75rem;
+  color: var(--text-light-muted);
+}
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   5. WHY HIRE ME / ABOUT ME (FIGMA LIGHT CONTAINER)
+   ========================================================================== */
+.figma-light-container {
+  width: 100%;
+  background: var(--figma-gray-bg);
+  border-radius: var(--radius-container);
+  padding: 80px 70px;
+  display: grid;
+  grid-template-columns: 460px 1fr;
+  align-items: center;
+  gap: 70px;
+}
+
+.hire-photo-frame {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1/1;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border: 4px solid #ffffff;
+}
+
+.hire-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hire-content-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+}
+
+.hire-title {
+  font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+  font-weight: 800;
+  color: var(--text-heading);
+  letter-spacing: -0.02em;
+}
+
+.hire-desc {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  max-width: 520px;
+}
+
+.hire-stats-row {
+  display: flex;
+  gap: 40px;
+  margin: 10px 0;
+}
+
+.hire-stat-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hire-stat-num {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-subheading);
+  line-height: 1;
+}
+
+.hire-stat-txt {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.hire-action-btn {
+  padding: 16px 36px;
+  border-radius: 20px;
+  border: 1.5px solid #151515;
+  background: transparent;
+  color: #151515;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.hire-action-btn:hover {
+  background: #151515;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   6. PORTFOLIO SECTION (FIGMA CARDS & ARROWS)
+   ========================================================================== */
+.portfolio-header-bar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.portfolio-title-text {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  color: var(--text-heading);
+  line-height: 1.15;
+}
+
+.btn-orange-pill {
+  padding: 12px 28px;
+  background: var(--figma-orange);
+  color: #ffffff;
+  border-radius: var(--radius-pill);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.btn-orange-pill:hover {
+  background: var(--figma-orange-hover);
+  transform: translateY(-2px);
+}
+
+/* Filter buttons */
+.portfolio-filters-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.filter-pill {
+  padding: 10px 22px;
+  border-radius: 24px;
+  background: var(--figma-gray-bg);
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-pill:hover,
+.filter-pill.active {
+  background: var(--figma-orange);
+  color: #ffffff;
+}
+
+/* Project Cards Grid */
+.portfolio-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 32px;
+}
+
+.portfolio-card-figma {
+  background: #ffffff;
+  border: 1px solid #E4E7EC;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.portfolio-card-figma:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+}
+
+.portfolio-thumb-box {
+  width: 100%;
+  aspect-ratio: 16/10;
+  background: #f8fafc;
+  overflow: hidden;
+}
+
+.portfolio-thumb-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.portfolio-card-figma:hover .portfolio-thumb-box img {
+  transform: scale(1.03);
+}
+
+.portfolio-card-body {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+.portfolio-title-arrow-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.portfolio-proj-name {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-heading);
+}
+
+.portfolio-circle-arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--figma-orange);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.portfolio-card-figma:hover .portfolio-circle-arrow {
+  transform: rotate(45deg);
+  background: var(--text-dark);
+}
+
+.portfolio-proj-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.portfolio-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.portfolio-tag {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  background: var(--figma-gray-bg);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.portfolio-links-footer {
+  display: flex;
+  gap: 16px;
+  padding-top: 14px;
+  border-top: 1px solid #E4E7EC;
+}
+
+.portfolio-text-link {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--figma-orange);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.portfolio-text-link:hover {
+  color: var(--text-dark);
+}
+
+/* ==========================================================================
+   7. SKILLS RUNNING MARQUEE RIBBON (FIGMA ANGLED BANNER)
+   ========================================================================== */
+.figma-marquee-wrap {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  height: 147px;
+  background: var(--figma-orange-bright);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-top-left-radius: 36px;
+  border-bottom-right-radius: 36px;
+}
+
+.marquee-angled-bar {
+  width: 120vw;
+  height: 64px;
+  background: #ffffff;
+  transform: rotate(-2deg);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  white-space: nowrap;
+  animation: marqueeRun 20s linear infinite;
+}
+
+@keyframes marqueeRun {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-skill-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.marquee-star-icon {
+  width: 28px;
+  height: 28px;
+  fill: var(--figma-orange);
+}
+
+/* ==========================================================================
+   8. CURRENTLY LEARNING (1 FULL PAGE VIEWPORT - FIGMA STYLE)
+   ========================================================================== */
+.figma-learning-viewport {
+  min-height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.learning-cards-triad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 30px;
+}
+
+.learning-figma-card {
+  background: #ffffff;
+  border: 1.5px solid #E4E7EC;
+  border-radius: var(--radius-card);
+  padding: 36px 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: var(--transition);
+}
+
+.learning-figma-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--figma-orange);
+  box-shadow: 0 20px 40px rgba(253, 133, 58, 0.12);
+}
+
+.learning-card-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.learning-tech-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--figma-gray-bg);
+  padding: 8px;
+}
+
+.learning-tech-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.learning-card-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-heading);
+}
+
+.learning-points-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.learning-points-list li {
+  font-size: 0.94rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  padding-left: 18px;
+  position: relative;
+}
+
+.learning-points-list li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  font-size: 0.8rem;
+  color: var(--figma-orange);
+}
+
+.learning-foot-note {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--figma-orange);
+  padding-top: 14px;
+  border-top: 1px solid #E4E7EC;
+}
+
+/* ==========================================================================
+   9. SKILLS SECTION (FIGMA TESTIMONIALS STYLE CONTAINER)
+   ========================================================================== */
+.skills-tri-grid-figma {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.skills-box-dark {
+  background: var(--figma-dark-card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-card);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.skills-box-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skills-tags-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-dark-tag {
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   9. CONTACT / RESUME SECTION (FIGMA LET'S DISCUSS)
+   ========================================================================== */
+.figma-contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 32px;
+  padding: 40px 0;
+}
+
+/* Resume Download Action Banner */
+.resume-action-banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-resume-figma {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  border-radius: var(--radius-pill);
+  background: var(--text-dark);
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+.btn-resume-figma:hover {
+  background: var(--figma-orange);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(253, 133, 58, 0.28);
+}
+
+/* Direct Contacts Row */
+.direct-contacts-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 6px;
+}
+
+.contact-direct-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: #ffffff;
+  border: 1.5px solid #E4E7EC;
+  border-radius: var(--radius-pill);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  transition: var(--transition);
+}
+
+.contact-direct-pill:hover {
+  border-color: var(--figma-orange);
+  color: var(--figma-orange);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(253, 133, 58, 0.15);
+}
+
+/* Footer */
+.figma-footer {
+  text-align: center;
+  padding: 40px 0 20px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (PRESERVING STRICTLY HORIZONTAL MENU)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-stage-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .hero-left-quote,
+  .hero-right-exp {
+    display: none;
+  }
+
+  .orbit-badge-figma[data-tech="html"]  { --tx: -200px; --ty: -5px; }
+  .orbit-badge-figma[data-tech="css"]   { --tx: -170px; --ty: -110px; }
+  .orbit-badge-figma[data-tech="js"]    { --tx: -85px;  --ty: -190px; }
+  .orbit-badge-figma[data-tech="ts"]    { --tx: 85px;   --ty: -190px; }
+  .orbit-badge-figma[data-tech="react"] { --tx: 170px;  --ty: -110px; }
+  .orbit-badge-figma[data-tech="git"]   { --tx: 200px;  --ty: -5px; }
+
+  .learning-cards-triad {
+    grid-template-columns: 1fr;
+  }
+
+  .figma-learning-viewport {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-wrapper {
+    padding: 14px 12px 40px;
+    gap: 50px;
+  }
+
+  .figma-navbar {
+    padding: 6px 12px;
+    min-height: 64px;
+  }
+
+  .nav-pill-btn {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+
+  .figma-dark-container {
+    padding: 40px 20px;
+    border-radius: 28px;
+  }
+
+  .portfolio-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-center-stage {
+    min-height: 420px;
+  }
+
+  .hero-arch-dome {
+    width: 280px;
+    height: 290px;
+    border-radius: 140px 140px 0 0;
+  }
+
+  .hero-portrait-wrap {
+    width: 230px;
+    height: 350px;
+  }
+
+  /* Centered with absolute mathematical symmetry around Naruto */
+  .orbit-badge-figma[data-tech="html"]  { --tx: -136px; --ty: 15px; }
+  .orbit-badge-figma[data-tech="css"]   { --tx: -128px; --ty: -82px; }
+  .orbit-badge-figma[data-tech="js"]    { --tx: -72px;  --ty: -160px; }
+  .orbit-badge-figma[data-tech="ts"]    { --tx: 72px;   --ty: -160px; }
+  .orbit-badge-figma[data-tech="react"] { --tx: 128px;  --ty: -82px; }
+  .orbit-badge-figma[data-tech="git"]   { --tx: 136px;  --ty: 15px; }
+
+  .badge-figma-inner {
+    padding: 6px 10px;
+    gap: 6px;
+  }
+
+  .badge-figma-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .badge-figma-text {
+    font-size: 0.74rem;
+  }
+
+  .figma-trajectory-dark {
+    padding: 36px 16px;
+    border-radius: 28px;
+  }
+
+  .trajectory-single-column {
+    gap: 16px;
+  }
+
+  .trajectory-dark-card {
+    padding: 22px 18px;
+    border-radius: 20px;
+  }
+
+  .step-num-pill {
+    width: 38px;
+    height: 38px;
+    font-size: 0.95rem;
+  }
+
+  .step-title {
+    font-size: 1.25rem;
+  }
+
+  .step-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .step-desc {
+    font-size: 0.88rem;
+  }
+
+  .mascot-image-wrap {
+    width: 190px;
+    height: 190px;
+  }
+
+  .mascot-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,45 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fed7aa"/>
+      <stop offset="50%" stop-color="#fef08a"/>
+      <stop offset="100%" stop-color="#fbcfe8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="24" fill="url(#bg2)"/>
+  <rect x="30" y="30" width="740" height="440" rx="16" fill="rgba(255,255,255,0.75)" stroke="rgba(255,255,255,0.9)" stroke-width="1.5"/>
+  <!-- Header -->
+  <rect x="50" y="50" width="700" height="45" rx="10" fill="rgba(255,255,255,0.85)"/>
+  <text x="75" y="78" font-family="sans-serif" font-weight="bold" font-size="16" fill="#ea580c">NovaShop.io</text>
+  <rect x="230" y="60" width="280" height="25" rx="12" fill="#f1f5f9"/>
+  <text x="245" y="77" font-family="sans-serif" font-size="11" fill="#94a3b8">Search products...</text>
+  <rect x="640" y="58" width="90" height="30" rx="8" fill="#ea580c"/>
+  <text x="662" y="78" font-family="sans-serif" font-size="11" font-weight="bold" fill="#ffffff">Cart (3)</text>
+  <!-- Product Grid -->
+  <rect x="50" y="115" width="215" height="330" rx="14" fill="rgba(255,255,255,0.9)"/>
+  <rect x="70" y="135" width="175" height="160" rx="10" fill="#ffedd5"/>
+  <circle cx="157" cy="215" r="45" fill="#fb923c" opacity="0.4"/>
+  <text x="70" y="325" font-family="sans-serif" font-weight="bold" font-size="14" fill="#1e293b">Aura Headphones</text>
+  <text x="70" y="348" font-family="sans-serif" font-size="12" fill="#64748b">Wireless Spatial Audio</text>
+  <text x="70" y="385" font-family="sans-serif" font-weight="bold" font-size="16" fill="#ea580c">49.00</text>
+  <rect x="70" y="405" width="175" height="26" rx="6" fill="#fed7aa"/>
+  <text x="115" y="422" font-family="sans-serif" font-size="11" font-weight="bold" fill="#9a3412">Add to Cart</text>
+
+  <rect x="290" y="115" width="215" height="330" rx="14" fill="rgba(255,255,255,0.9)"/>
+  <rect x="310" y="135" width="175" height="160" rx="10" fill="#fef3c7"/>
+  <rect x="360" y="175" width="75" height="80" rx="12" fill="#f59e0b" opacity="0.4"/>
+  <text x="310" y="325" font-family="sans-serif" font-weight="bold" font-size="14" fill="#1e293b">Minimalist Watch</text>
+  <text x="310" y="348" font-family="sans-serif" font-size="12" fill="#64748b">Titanium Smart Bezel</text>
+  <text x="310" y="385" font-family="sans-serif" font-weight="bold" font-size="16" fill="#ea580c">89.00</text>
+  <rect x="310" y="405" width="175" height="26" rx="6" fill="#fed7aa"/>
+  <text x="355" y="422" font-family="sans-serif" font-size="11" font-weight="bold" fill="#9a3412">Add to Cart</text>
+
+  <rect x="530" y="115" width="215" height="330" rx="14" fill="rgba(255,255,255,0.9)"/>
+  <rect x="550" y="135" width="175" height="160" rx="10" fill="#fce7f3"/>
+  <polygon points="637,170 675,245 600,245" fill="#f472b6" opacity="0.4"/>
+  <text x="550" y="325" font-family="sans-serif" font-weight="bold" font-size="14" fill="#1e293b">Glass Keyboard</text>
+  <text x="550" y="348" font-family="sans-serif" font-size="12" fill="#64748b">Optical Tactile Switches</text>
+  <text x="550" y="385" font-family="sans-serif" font-weight="bold" font-size="16" fill="#ea580c">59.00</text>
+  <rect x="550" y="405" width="175" height="26" rx="6" fill="#fed7aa"/>
+  <text x="595" y="422" font-family="sans-serif" font-size="11" font-weight="bold" fill="#9a3412">Add to Cart</text>
+</svg>

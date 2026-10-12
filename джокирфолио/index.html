@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kiwwwataru</title>
+  <meta name="description" content="Портфолио Frontend-разработчика jokerfolio: React, TypeScript, JavaScript, HTML5, CSS3, Git. Чистая вёрстка, архитектура компонентов и траектория развития." />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css?v=20261012-6" />
+</head>
+<body>
+
+  <!-- ====================================================================
+       1. НАВИГАЦИОННАЯ ПАНЕЛЬ (FIGMA-СТИЛЬ, БЕЗ БУРГЕРА, БЕЗ КНОПКИ CV)
+       ==================================================================== -->
+  <header style="padding: 16px 20px 0;">
+    <nav class="figma-navbar">
+      
+      <!-- Brand Logo: jokerfolio -->
+      <a href="#hero" class="figma-nav-logo">
+        <div class="logo-circle-icon">JF</div>
+        <span>ki<span class="text-orange">www</span><span>ataru</span></span>
+      </a>
+
+      <!-- Horizontal Menu (No burger, without 'About' link) -->
+      <div class="nav-links-scroll" aria-label="Основное меню">
+        <ul class="nav-links-list">
+          <li><a href="#hero" class="nav-pill-btn active">Главная</a></li>
+          <li><a href="#tech-stack" class="nav-pill-btn">Мой стек</a></li>
+          <li><a href="#career" class="nav-pill-btn">Траектория</a></li>
+          <li><a href="#projects" class="nav-pill-btn">Мои работы</a></li>
+          <li><a href="#learning" class="nav-pill-btn">Изучаемое</a></li>
+          <li><a href="#skills" class="nav-pill-btn">Мои навыки</a></li>
+          <li><a href="#resume" class="nav-pill-btn">Контакты</a></li>
+        </ul>
+      </div>
+
+    </nav>
+  </header>
+
+  <!-- ====================================================================
+       ОСНОВНОЙ КОНТЕНТ
+       ==================================================================== -->
+  <main class="main-wrapper">
+
+    <!-- ==================================================================
+         2. ГЛАВНЫЙ ЭКРАН (HERO) — КУПОЛ FIGMA + НАРУТО БЕЗ ФОНА
+         ================================================================== -->
+    <section class="figma-hero-section" id="hero">
+      
+      <!-- Приветствие и заголовок -->
+      <div class="hero-intro-header">
+        <div class="hero-hello-pill">Привет!</div>
+        
+        <div class="hero-headline-wrap">
+          <div class="hero-headline-row">
+            <span class="hero-title-main">Я —</span>
+            <span class="hero-title-main text-orange">kiwwwataru,</span>
+          </div>
+          <div class="hero-title-main" style="color: var(--text-heading); font-weight: 700;">
+            Frontend-разработчик
+          </div>
+        </div>
+      </div>
+
+      <!-- Визуальная композиция Hero (Цитата + Персиковый купол с Наруто + Опыт) -->
+      <div class="hero-stage-grid">
+        
+        <!-- Слева: Цитата -->
+        <div class="hero-left-quote">
+          <div class="hero-quote-mark">“</div>
+          <p class="hero-quote-text">
+            Качественная вёрстка, внимание к архитектуре компонентов и деталям каждого пикселя.
+          </p>
+        </div>
+
+        <!-- Центр: Купол + Летающие иконки стека + Наруто на прозрачном фоне -->
+        <div class="hero-center-stage">
+          
+          <!-- Персиковый арочный купол -->
+          <div class="hero-arch-dome" aria-hidden="true"></div>
+
+          <!-- Летающие иконки стека технологий вокруг купола -->
+          <div class="hero-orbit-wrapper">
+            
+            <a href="#card-html" class="orbit-badge-figma" data-tech="html" title="HTML5">
+              <div class="badge-figma-inner">
+                <img src="assets/icons/html.svg" alt="HTML5" class="badge-figma-icon" />
+                <span class="badge-figma-text">HTML5</span>
+              </div>
+            </a>
+
+            <a href="#card-css" class="orbit-badge-figma" data-tech="css" title="CSS3">
+              <div class="badge-figma-inner">
+                <img src="assets/icons/css.svg" alt="CSS3" class="badge-figma-icon" />
+                <span class="badge-figma-text">CSS3</span>
+              </div>
+            </a>
+
+            <a href="#card-js" class="orbit-badge-figma" data-tech="js" title="JavaScript">
+              <div class="badge-figma-inner">
+                <img src="assets/icons/javascript.svg" alt="JavaScript" class="badge-figma-icon" />
+                <span class="badge-figma-text">JavaScript</span>
+              </div>
+            </a>
+
+            <a href="#card-ts" class="orbit-badge-figma" data-tech="ts" title="TypeScript">
+              <div class="badge-figma-inner">
+                <img src="assets/icons/typescript.svg" alt="TypeScript" class="badge-figma-icon" />
+                <span class="badge-figma-text">TypeScript</span>
+              </div>
+            </a>
+
+            <a href="#card-react" class="orbit-badge-figma" data-tech="react" title="React">
+              <div class="badge-figma-inner">
+                <img src="assets/icons/react.svg" alt="React" class="badge-figma-icon" />
+                <span class="badge-figma-text">React</span>
+              </div>
+            </a>
+
+            <a href="#card-git" class="orbit-badge-figma" data-tech="git" title="Git">
+              <div class="badge-figma-inner">
+                <img src="assets/icons/git.svg" alt="Git" class="badge-figma-icon" />
+                <span class="badge-figma-text">Git</span>
+              </div>
+            </a>
+
+          </div>
+
+          <!-- Фото Наруто с прозрачным фоном -->
+          <div class="hero-portrait-wrap">
+            <img src="assets/images/naruto_hero.png" alt="jokerfolio — Наруто" class="hero-portrait-img" />
+          </div>
+
+          <!-- Парные кнопки быстрого перехода -->
+          <div class="hero-dual-pills">
+            <a href="#projects" class="dual-pill-btn dual-pill-active">Портфолио</a>
+            <a href="resume.pdf" download="jokerfolio_Resume.pdf" class="dual-pill-btn dual-pill-outline">Резюме (PDF)</a>
+          </div>
+
+        </div>
+
+        <!-- Справа: Звёзды и уровень квалификации -->
+        <div class="hero-right-exp">
+          <div class="hero-stars-row">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <div class="hero-exp-number">Junior+</div>
+          <p class="hero-exp-label">Frontend-разработчик</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================================================================
+         3. МОЙ СТЕК ТЕХНОЛОГИЙ (ТЕМНЫЙ КОНТЕЙНЕР FIGMA, БЕЗ УРОВНЕЙ ВЛАДЕНИЯ)
+         ================================================================== -->
+    <section class="figma-dark-container" id="tech-stack">
+      <div class="figma-dark-bg-pattern" aria-hidden="true"></div>
+
+      <div class="services-top-row">
+        <div>
+          <h2 class="section-heading-dark">
+            Мой <span class="text-orange">стек технологий</span>
+          </h2>
+          <div style="font-size: 1.1rem; color: var(--figma-orange); font-weight: 700; margin-top: 4px;">
+            Ключевой стек разработки
+          </div>
+        </div>
+        <p class="services-top-desc">
+          Ключевые технологии и проверенные инструменты, на которых я создаю современные, быстрые и адаптивные веб-приложения.
+        </p>
+      </div>
+
+      <div class="services-cards-grid">
+        
+        <!-- 1. HTML5 -->
+        <div class="service-card" id="card-html">
+          <div class="service-card-head">
+            <div class="service-title-group">
+              <div class="service-icon-box">
+                <img src="assets/icons/html.svg" alt="HTML5" />
+              </div>
+              <h3 class="service-name">HTML5</h3>
+            </div>
+          </div>
+
+          <div class="service-details-block">
+            <span class="service-block-heading">Что знаю:</span>
+            <ul class="service-list">
+              <li>Семантическая разметка (main, nav, article, section)</li>
+              <li>Стандарты доступности WAI-ARIA для скринридеров</li>
+              <li>Мета-теги Open Graph, валидная микроразметка</li>
+              <li>Формы, кастомная валидация, работа с SVG</li>
+            </ul>
+          </div>
+
+          <div class="service-details-block">
+            <span class="service-block-heading">Что умею:</span>
+            <ul class="service-list">
+              <li>Создавать чистый, валидный семантический код</li>
+              <li>Обеспечивать доступность (a11y) интерфейсов</li>
+              <li>Оптимизировать структуру страниц под поисковые системы</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 2. CSS3 -->
+        <div class="service-card" id="card-css">
+          <div class="service-card-head">
+            <div class="service-title-group">
+              <div class="service-icon-box">
+                <img src="assets/icons/css.svg" alt="CSS3" />
+              </div>
+              <h3 class="service-name">CSS3 / SCSS</h3>
+            </div>
+          </div>
+
+          <div class="service-details-block">
+            <span class="service-block-heading">Что знаю:</span>
+            <ul class="service-list">
+              <li>Flexbox и двухмерная сетка CSS Grid</li>
+              <li>Адаптивная верстка (Mobile First, Media Queries)</li>
+              <li>CSS-переменные (Variables), анимации @keyframes</li>
+              <li>Методология BEM (БЭМ) и препроцессор SCSS</li>
+            </ul>
+          </div>
+
+          <div class="service-details-block">
+            <span class="service-block-heading">Что умею:</span>
+            <ul class="service-list">
+              <li>Верстать Pixel Perfect по макетам из Figma</li>
+              <li>Создавать плавные микроанимации и переходы</li>
+              <li>Обеспечивать идеальное отображение на смартфонах</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 3. JAVASCRIPT -->
+        <div class="service-card" id="card-js">
+          <div class="service-card-head">
+            <div class="service-title-group">
+              <div class="service-icon-box">
+                <img src="assets/icons/javascript.svg" alt="JavaScript" />
+              </div>
+              <h3 class="service-name">JavaScript</h3>
+            </div>
+          </div>
+
+          <div class="service-details-block">
+            <span class="service-block-heading">Что знаю:</span>
+            <ul class="service-list">
+              <li>Стандарты ES6+: деструктуризация, модули, стрелочные функции</li>
+              <li>Манипуляции с DOM/BOM, события и делегирование</li>
+              <li>Асинхронность: Promises, async/await, Event Loop</li>
+              <li>Работа с REST API, Fetch API, JSON и try/catch</li>
+            </ul>
+          </div>
+
+          <div class="service-details-block">
+            <span class="service-block-heading">Что умею:</span>
+            <ul class="service-list">
+              <li>Писать модульный и производительный клиентский код</li>
+              <li>Интегрировать бэкенд API с обработкой ошибок</li>
+              <li>Разрабатывать интерактивные компоненты интерфейсов</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 4. TYPESCRIPT -->
+        <div class="service-card" id="card-ts">
+          <div class="service-card-head">
+            <div class="service-title-group">
+              <div class="service-icon-box">
+                <img src="assets/icons/typescript.svg" alt="TypeScript" />
+              </div>
+              <h3 class="service-name">TypeScript</h3>
+            </div>
+          </div>
+
+          <div class="service-details-block">
+            <span class="service-block-heading">Что знаю:</span>
+            <ul class="service-list">
+              <li>Базовые и составные типы, Union & Intersection</li>
+              <li>Интерфейсы (Interfaces), Type Aliases и расширение</li>
+              <li>Основы дженериков (Generics) и Type Narrowing</li>
+              <li>Конфигурация tsconfig.json и строгий режим (strict)</li>
+            </ul>
+          </div>
+
+          <div class="service-details-block">
+            <span class="service-block-heading">Что умею:</span>
+            <ul class="service-list">
+              <li>Строго типизировать пропсы и состояние React-компонентов</li>
+              <li>Описывать контракты моделей данных и ответов API</li>
+              <li>Предотвращать runtime-ошибки на этапе компиляции</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 5. REACT -->
+        <div class="service-card" id="card-react">
+          <div class="service-card-head">
+            <div class="service-title-group">
+              <div class="service-icon-box">
+                <img src="assets/icons/react.svg" alt="React" />
+              </div>
+              <h3 class="service-name">React</h3>
+            </div>
+          </div>
+
+          <div class="service-details-block">
+            <span class="service-block-heading">Что знаю:</span>
+            <ul class="service-list">
+              <li>Компонентный подход, Virtual DOM, JSX-синтаксис</li>
+              <li>Хуки: useState, useEffect, useRef, useMemo, useCallback</li>
+              <li>Маршрутизация страниц с помощью React Router</li>
+              <li>Создание кастомных хуков (Custom Hooks)</li>
+            </ul>
+          </div>
+
+          <div class="service-details-block">
+            <span class="service-block-heading">Что умею:</span>
+            <ul class="service-list">
+              <li>Создавать быстрые Single Page Applications (SPA)</li>
+              <li>Декомпозировать интерфейс на переиспользуемые блоки</li>
+              <li>Оптимизировать рендеринг и исключать лишние перерисовки</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 6. GIT & GITHUB -->
+        <div class="service-card" id="card-git">
+          <div class="service-card-head">
+            <div class="service-title-group">
+              <div class="service-icon-box">
+                <img src="assets/icons/git.svg" alt="Git" />
+              </div>
+              <h3 class="service-name">Git & GitHub</h3>
+            </div>
+          </div>
+
+          <div class="service-details-block">
+            <span class="service-block-heading">Что знаю:</span>
+            <ul class="service-list">
+              <li>Команды: init, add, commit, push, pull, branch, checkout</li>
+              <li>Слияние (merge), rebase и разрешение конфликтов</li>
+              <li>Командный workflow: Pull Requests, Code Review, Issues</li>
+              <li>Оформление по стандарту Conventional Commits</li>
+            </ul>
+          </div>
+
+          <div class="service-details-block">
+            <span class="service-block-heading">Что умею:</span>
+            <ul class="service-list">
+              <li>Вести чистую историю версий по модели GitFlow</li>
+              <li>Создавать понятные Pull Requests с описанием изменений</li>
+              <li>Деплоить проекты на GitHub Pages, Vercel и Surge</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         4. ТРАЕКТОРИЯ РАЗВИТИЯ (ТЕМНЫЙ КОНТЕЙНЕР FIGMA С КАРТОЧКАМИ И НАРУТО)
+         ================================================================== -->
+    <section class="figma-dark-container figma-trajectory-dark" id="career">
+      <div class="figma-dark-bg-pattern" aria-hidden="true"></div>
+      
+      <div class="section-center-heading" style="margin-bottom: 40px;">
+        <h2 class="section-heading-dark">
+          Опыт и <span class="text-orange">траектория</span>
+        </h2>
+        <div style="font-size: 1.15rem; font-weight: 700; color: var(--figma-orange); margin-top: 8px;">
+          Траектория профессионального роста • Цель: Senior Frontend Developer
+        </div>
+      </div>
+
+      <div class="trajectory-single-column">
+        
+        <!-- Карточка 1: Junior -->
+        <div class="trajectory-dark-card current-step">
+          <div class="trajectory-card-header">
+            <div class="step-num-pill active-pill">01</div>
+            <div class="step-meta">
+              <span class="step-badge-tag active-tag">Текущий уровень - База</span>
+              <h3 class="step-title">Junior-разработчик</h3>
+            </div>
+          </div>
+          <h4 class="step-subtitle">Фундамент и пет-проекты</h4>
+          <p class="step-desc">
+            Крепкие знания семантического HTML5 и адаптивного CSS3, понимание JavaScript ES6+ (асинхронность, Event Loop, DOM), разработка компонентных Single Page Applications на React и строгая типизация пропсов в TypeScript.
+          </p>
+          <div class="step-tech-tags">
+            <span class="step-dark-tag">HTML5 & SCSS</span>
+            <span class="step-dark-tag">JavaScript ES6+</span>
+            <span class="step-dark-tag">React</span>
+            <span class="step-dark-tag">TypeScript</span>
+            <span class="step-dark-tag">Git & GitHub</span>
+          </div>
+        </div>
+
+        <!-- Карточка 2: Middle -->
+        <div class="trajectory-dark-card next-step">
+          <div class="trajectory-card-header">
+            <div class="step-num-pill">02</div>
+            <div class="step-meta">
+              <span class="step-badge-tag">Ближайшая цель (1–2 года)</span>
+              <h3 class="step-title">Middle-разработчик</h3>
+            </div>
+          </div>
+          <h4 class="step-subtitle">Архитектура и масштабируемость</h4>
+          <p class="step-desc">
+            Самостоятельное проектирование сложных интерфейсов, внедрение методологии Feature-Sliced Design (FSD), продвинутый стейт-менеджмент (Zustand / TanStack Query), серверный рендеринг в Next.js, тестирование (Jest / React Testing Library) и оптимизация Web Vitals.
+          </p>
+          <div class="step-tech-tags">
+            <span class="step-dark-tag">FSD Architecture</span>
+            <span class="step-dark-tag">Next.js</span>
+            <span class="step-dark-tag">Zustand / Redux</span>
+            <span class="step-dark-tag">Jest / RTL</span>
+            <span class="step-dark-tag">Performance</span>
+          </div>
+        </div>
+
+        <!-- Карточка 3: Senior -->
+        <div class="trajectory-dark-card goal-step">
+          <div class="trajectory-card-header">
+            <div class="step-num-pill goal-pill">03</div>
+            <div class="step-meta">
+              <span class="step-badge-tag goal-tag">Целевая вершина</span>
+              <h3 class="step-title text-orange">Senior-разработчик</h3>
+            </div>
+          </div>
+          <h4 class="step-subtitle text-orange">Системный дизайн и техлид</h4>
+          <p class="step-desc">
+            System Design клиентских приложений, микрофронтенды, создание переиспользуемых Design Systems, техническое лидерство, код-ревью, менторинг разработчиков и прямое влияние на ключевые продуктовые и бизнес-метрики.
+          </p>
+          <div class="step-tech-tags">
+            <span class="step-dark-tag">System Design</span>
+            <span class="step-dark-tag">Microfrontends</span>
+            <span class="step-dark-tag">Design Systems</span>
+            <span class="step-dark-tag">Tech Leadership</span>
+            <span class="step-dark-tag">Mentoring</span>
+          </div>
+        </div>
+
+        <!-- Карточка с Наруто: Путь ниндзя в разработке -->
+        <div class="trajectory-mascot-card">
+          <div class="mascot-badge-pill">Путь ниндзя в разработке</div>
+          
+          <div class="mascot-image-wrap">
+            <img src="assets/images/naruto_pointing.png" alt="Наруто указывает на цель — Senior Developer!" class="mascot-naruto-img" />
+          </div>
+
+          <div class="mascot-speech-bubble">
+            <div class="mascot-quote-icon">“</div>
+            <p class="mascot-quote-text">
+              Никогда не отступать от намеченной цели и постоянно расти — мой путь ниндзя в веб-разработке. От уверенного фундамента к сложным архитектурным вершинам!
+            </p>
+          </div>
+
+          <div class="mascot-stats-grid">
+            <div class="mascot-stat-item">
+              <span class="mascot-stat-val text-orange">TypeScript + React</span>
+              <span class="mascot-stat-lbl">Текущий фокус</span>
+            </div>
+            <div class="mascot-stat-item">
+              <span class="mascot-stat-val text-orange">Senior Dev</span>
+              <span class="mascot-stat-lbl">Главная цель</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================================================================
+         5. МОИ РАБОТЫ (ПОРТФОЛИО ПРОЕКТОВ)
+         ================================================================== -->
+    <section id="projects">
+      
+      <div class="portfolio-header-bar">
+        <div>
+          <div class="portfolio-title-text">Взгляните на</div>
+          <div class="portfolio-title-text">
+            мои <span class="text-orange">работы</span>
+          </div>
+        </div>
+        <a href="#projects" class="btn-orange-pill">Все проекты</a>
+      </div>
+
+      <!-- Фильтры категорий -->
+      <div class="portfolio-filters-row">
+        <button class="filter-pill active">Все</button>
+        <button class="filter-pill">React</button>
+        <button class="filter-pill">TypeScript</button>
+        <button class="filter-pill">SPA</button>
+        <button class="filter-pill">Лендинги</button>
+      </div>
+
+      <!-- Сетка карточек проектов -->
+      <div class="portfolio-cards-grid">
+        
+        <!-- Проект 1 -->
+        <div class="portfolio-card-figma">
+          <div class="portfolio-thumb-box">
+            <img src="assets/images/project-1.svg" alt="LiquidFlow Dashboard" />
+          </div>
+          <div class="portfolio-card-body">
+            <div class="portfolio-title-arrow-row">
+              <h3 class="portfolio-proj-name">LiquidFlow — Аналитическая панель (SaaS)</h3>
+              <div class="portfolio-circle-arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </div>
+            </div>
+            <p class="portfolio-proj-desc">
+              Панель аналитики с интерактивными графиками, фильтрацией метрик и модульной адаптивной сеткой.
+            </p>
+            <div class="portfolio-tags-row">
+              <span class="portfolio-tag">React</span>
+              <span class="portfolio-tag">TypeScript</span>
+              <span class="portfolio-tag">Chart.js</span>
+            </div>
+            <div class="portfolio-links-footer">
+              <a href="#hero" class="portfolio-text-link">Демо-версия →</a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="portfolio-text-link">Код на GitHub →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Проект 2 -->
+        <div class="portfolio-card-figma">
+          <div class="portfolio-thumb-box">
+            <img src="assets/images/project-2.svg" alt="NovaShop Storefront" />
+          </div>
+          <div class="portfolio-card-body">
+            <div class="portfolio-title-arrow-row">
+              <h3 class="portfolio-proj-name">NovaShop — Интернет-магазин</h3>
+              <div class="portfolio-circle-arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </div>
+            </div>
+            <p class="portfolio-proj-desc">
+              Онлайн-витрина с каталогом товаров, поиском, динамической корзиной и адаптивным оформлением заказа.
+            </p>
+            <div class="portfolio-tags-row">
+              <span class="portfolio-tag">React</span>
+              <span class="portfolio-tag">SCSS</span>
+              <span class="portfolio-tag">REST API</span>
+            </div>
+            <div class="portfolio-links-footer">
+              <a href="#hero" class="portfolio-text-link">Демо-версия →</a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="portfolio-text-link">Код на GitHub →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Проект 3 -->
+        <div class="portfolio-card-figma">
+          <div class="portfolio-thumb-box">
+            <img src="assets/images/project-3.svg" alt="AuraTask Kanban" />
+          </div>
+          <div class="portfolio-card-body">
+            <div class="portfolio-title-arrow-row">
+              <h3 class="portfolio-proj-name">AuraTask — Канбан-доска задач</h3>
+              <div class="portfolio-circle-arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </div>
+            </div>
+            <p class="portfolio-proj-desc">
+              Таск-трекер с поддержкой Drag-and-Drop, тегами приоритета и сохранением состояния в LocalStorage.
+            </p>
+            <div class="portfolio-tags-row">
+              <span class="portfolio-tag">TypeScript</span>
+              <span class="portfolio-tag">React</span>
+              <span class="portfolio-tag">Drag & Drop</span>
+            </div>
+            <div class="portfolio-links-footer">
+              <a href="#hero" class="portfolio-text-link">Демо-версия →</a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="portfolio-text-link">Код на GitHub →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Проект 4 -->
+        <div class="portfolio-card-figma">
+          <div class="portfolio-thumb-box">
+            <img src="assets/images/project-4.svg" alt="PixelCraft Agency" />
+          </div>
+          <div class="portfolio-card-body">
+            <div class="portfolio-title-arrow-row">
+              <h3 class="portfolio-proj-name">PixelCraft — Студийный лендинг</h3>
+              <div class="portfolio-circle-arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </div>
+            </div>
+            <p class="portfolio-proj-desc">
+              Промо-лендинг с частицами на HTML5 Canvas, трёхмерными элементами и мгновенной скоростью загрузки.
+            </p>
+            <div class="portfolio-tags-row">
+              <span class="portfolio-tag">HTML5</span>
+              <span class="portfolio-tag">CSS Grid</span>
+              <span class="portfolio-tag">Canvas</span>
+            </div>
+            <div class="portfolio-links-footer">
+              <a href="#hero" class="portfolio-text-link">Демо-версия →</a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="portfolio-text-link">Код на GitHub →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================================================================
+         6. БЕГУЩАЯ СТРОКА СТЕКА ПОД НАКЛОНОМ (С MS OFFICE И VS CODE)
+         ================================================================== -->
+    <div class="figma-marquee-wrap">
+      <div class="marquee-angled-bar">
+        <div class="marquee-track">
+          
+          <div class="marquee-skill-item">
+            <svg class="marquee-star-icon" viewBox="0 0 35 35"><path d="M16.48 0.25L21.71 12.34L34.2 16.5L22.12 21.73L17.96 34.22L12.73 22.14L0.24 17.98L12.32 12.75L16.48 0.25Z"/></svg>
+            HTML5
+          </div>
+          <div class="marquee-skill-item">
+            <svg class="marquee-star-icon" viewBox="0 0 35 35"><path d="M16.48 0.25L21.71 12.34L34.2 16.5L22.12 21.73L17.96 34.22L12.73 22.14L0.24 17.98L12.32 12.75L16.48 0.25Z"/></svg>
+            CSS3
+          </div>
+          <div class="marquee-skill-item">
+            <svg class="marquee-star-icon" viewBox="0 0 35 35"><path d="M16.48 0.25L21.71 12.34L34.2 16.5L22.12 21.73L17.96 34.22L12.73 22.14L0.24 17.98L12.32 12.75L16.48 0.25Z"/></svg>
+            JAVASCRIPT
+          </div>
+          <div class="marquee-skill-item">
+            <svg class="marquee-star-icon" viewBox="0 0 35 35"><path d="M16.48 0.25L21.71 12.34L34.2 16.5L22.12 21.73L17.96 34.22L12.73 22.14L0.24 17.98L12.32 12.75L16.48 0.25Z"/></svg>
+            TYPESCRIPT
+          </div>
+          <div class="marquee-skill-item">
+            <svg class="marquee-star-icon" viewBox="0 0 35 35"><path d="M16.48 0.25L21.71 12.34L34.2 16.5L22.12 21.73L17.96 34.22L12.73 22.14L0.24 17.98L12.32 12.75L16.48 0.25Z"/></svg>
+            REACT
+          </div>
+          <div class="marquee-skill-item">
+            <svg class="marquee-star-icon" viewBox="0 0 35 35"><path d="M16.48 0.25L21.71 12.34L34.2 16.5L22.12 21.73L17.96 34.22L12.73 22.14L0.24 17.98L12.32 12.75L16.48 0.25Z"/></svg>
+            GIT
+          </div>
+          <div class="marquee-skill-item">
+            <svg class="marquee-star-icon" viewBox="0 0 35 35"><path d="M16.48 0.25L21.71 12.34L34.2 16.5L22.12 21.73L17.96 34.22L12.73 22.14L0.24 17.98L12.32 12.75L16.48 0.25Z"/></svg>
+            MS OFFICE
+          </div>
+          <div class="marquee-skill-item">
+            <svg class="marquee-star-icon" viewBox="0 0 35 35"><path d="M16.48 0.25L21.71 12.34L34.2 16.5L22.12 21.73L17.96 34.22L12.73 22.14L0.24 17.98L12.32 12.75L16.48 0.25Z"/></svg>
+            VISUAL STUDIO CODE
+          </div>
+
+          <!-- Дублирование для бесконечного плавного цикла -->
+          <div class="marquee-skill-item">
+            <svg class="marquee-star-icon" viewBox="0 0 35 35"><path d="M16.48 0.25L21.71 12.34L34.2 16.5L22.12 21.73L17.96 34.22L12.73 22.14L0.24 17.98L12.32 12.75L16.48 0.25Z"/></svg>
+            HTML5
+          </div>
+          <div class="marquee-skill-item">
+            <svg class="marquee-star-icon" viewBox="0 0 35 35"><path d="M16.48 0.25L21.71 12.34L34.2 16.5L22.12 21.73L17.96 34.22L12.73 22.14L0.24 17.98L12.32 12.75L16.48 0.25Z"/></svg>
+            CSS3
+          </div>
+          <div class="marquee-skill-item">
+            <svg class="marquee-star-icon" viewBox="0 0 35 35"><path d="M16.48 0.25L21.71 12.34L34.2 16.5L22.12 21.73L17.96 34.22L12.73 22.14L0.24 17.98L12.32 12.75L16.48 0.25Z"/></svg>
+            JAVASCRIPT
+          </div>
+          <div class="marquee-skill-item">
+            <svg class="marquee-star-icon" viewBox="0 0 35 35"><path d="M16.48 0.25L21.71 12.34L34.2 16.5L22.12 21.73L17.96 34.22L12.73 22.14L0.24 17.98L12.32 12.75L16.48 0.25Z"/></svg>
+            TYPESCRIPT
+          </div>
+          <div class="marquee-skill-item">
+            <svg class="marquee-star-icon" viewBox="0 0 35 35"><path d="M16.48 0.25L21.71 12.34L34.2 16.5L22.12 21.73L17.96 34.22L12.73 22.14L0.24 17.98L12.32 12.75L16.48 0.25Z"/></svg>
+            REACT
+          </div>
+          <div class="marquee-skill-item">
+            <svg class="marquee-star-icon" viewBox="0 0 35 35"><path d="M16.48 0.25L21.71 12.34L34.2 16.5L22.12 21.73L17.96 34.22L12.73 22.14L0.24 17.98L12.32 12.75L16.48 0.25Z"/></svg>
+            GIT
+          </div>
+          <div class="marquee-skill-item">
+            <svg class="marquee-star-icon" viewBox="0 0 35 35"><path d="M16.48 0.25L21.71 12.34L34.2 16.5L22.12 21.73L17.96 34.22L12.73 22.14L0.24 17.98L12.32 12.75L16.48 0.25Z"/></svg>
+            MS OFFICE
+          </div>
+          <div class="marquee-skill-item">
+            <svg class="marquee-star-icon" viewBox="0 0 35 35"><path d="M16.48 0.25L21.71 12.34L34.2 16.5L22.12 21.73L17.96 34.22L12.73 22.14L0.24 17.98L12.32 12.75L16.48 0.25Z"/></svg>
+            VISUAL STUDIO CODE
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================================================================
+         7. ИЗУЧАЕМОЕ ПРЯМО СЕЙЧАС (JS, TS, REACT)
+         ================================================================== -->
+    <section class="figma-learning-viewport" id="learning">
+      
+      <div class="section-center-heading">
+        <h2 class="heading-lg">
+          Сейчас <span class="text-orange">изучаю</span>
+        </h2>
+        <div style="font-size: 1.15rem; font-weight: 700; color: var(--figma-orange); margin-top: 6px;">
+          Изучаемое прямо сейчас • Погружение в глубины фронтенд-разработки
+        </div>
+      </div>
+
+      <div class="learning-cards-triad">
+        
+        <!-- JavaScript Deep Dive -->
+        <div class="learning-figma-card">
+          <div class="learning-card-head">
+            <div class="learning-tech-icon">
+              <img src="assets/icons/javascript.svg" alt="JavaScript" />
+            </div>
+            <h3 class="learning-card-title">JavaScript</h3>
+          </div>
+          <ul class="learning-points-list">
+            <li><strong>Event Loop:</strong> микрозадачи, макрозадачи, фазы рендеринга браузера</li>
+            <li><strong>Движок V8:</strong> JIT-компиляция, скрытые классы и оптимизация инлайнинга</li>
+            <li><strong>Управление памятью:</strong> Garbage Collection, утечки ссылок и профайлер</li>
+            <li><strong>Паттерны проектирования:</strong> Наблюдатель, Модуль, Фабрика, Синглтон</li>
+          </ul>
+          <div class="learning-foot-note">Текущий фокус: профилирование производительности</div>
+        </div>
+
+        <!-- TypeScript Advanced -->
+        <div class="learning-figma-card">
+          <div class="learning-card-head">
+            <div class="learning-tech-icon">
+              <img src="assets/icons/typescript.svg" alt="TypeScript" />
+            </div>
+            <h3 class="learning-card-title">TypeScript</h3>
+          </div>
+          <ul class="learning-points-list">
+            <li><strong>Условные типы:</strong> сложные конструкции с оператором <code>infer</code></li>
+            <li><strong>Utility Types:</strong> ручная реализация DeepReadonly, Pick, Omit, ReturnType</li>
+            <li><strong>Template Literal Types:</strong> строгие строковые типы и валидация путей</li>
+            <li><strong>Type Guards:</strong> пользовательские предикаты <code>is</code> и объединения</li>
+          </ul>
+          <div class="learning-foot-note">Текущий фокус: типизация сложных архитектурных паттернов</div>
+        </div>
+
+        <!-- React Modern -->
+        <div class="learning-figma-card">
+          <div class="learning-card-head">
+            <div class="learning-tech-icon">
+              <img src="assets/icons/react.svg" alt="React" />
+            </div>
+            <h3 class="learning-card-title">React</h3>
+          </div>
+          <ul class="learning-points-list">
+            <li><strong>React 19:</strong> Server Actions, новые хуки <code>useActionState</code> и <code>useOptimistic</code></li>
+            <li><strong>Стейт-менеджмент:</strong> легковесный Zustand и TanStack Query для кэширования</li>
+            <li><strong>Архитектура приложений:</strong> методология Feature-Sliced Design (FSD)</li>
+            <li><strong>Оптимизация рендеринга:</strong> мемоизация и замеры в React Profiler</li>
+          </ul>
+          <div class="learning-foot-note">Текущий фокус: разработка пет-проекта по методологии FSD</div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================================================================
+         8. МОИ НАВЫКИ И ИНСТРУМЕНТЫ (ТЕМНЫЙ КОНТЕЙНЕР FIGMA)
+         ================================================================== -->
+    <section class="figma-dark-container" id="skills">
+      <div class="figma-dark-bg-pattern" aria-hidden="true"></div>
+
+      <div class="services-top-row">
+        <div>
+          <h2 class="section-heading-dark">
+            Навыки, подтверждающие <span class="text-orange">результат</span>
+          </h2>
+          <div style="font-size: 1.1rem; color: var(--figma-orange); font-weight: 700; margin-top: 4px;">
+            Мои навыки и инструменты разработки
+          </div>
+        </div>
+        <p class="services-top-desc">
+          Инженерный базис, умение выстраивать командный процесс и инструменты повседневной разработки.
+        </p>
+      </div>
+
+      <div class="skills-tri-grid-figma">
+        
+        <div class="skills-box-dark">
+          <h3 class="skills-box-title">Технические навыки</h3>
+          <div class="skills-tags-cloud">
+            <span class="skill-dark-tag">Адаптивная вёрстка</span>
+            <span class="skill-dark-tag">Mobile First</span>
+            <span class="skill-dark-tag">React SPA</span>
+            <span class="skill-dark-tag">TypeScript типизация</span>
+            <span class="skill-dark-tag">Интеграция REST API</span>
+            <span class="skill-dark-tag">CSS Grid & Flexbox</span>
+            <span class="skill-dark-tag">Семантический HTML5</span>
+            <span class="skill-dark-tag">Кроссбраузерность</span>
+          </div>
+        </div>
+
+        <div class="skills-box-dark">
+          <h3 class="skills-box-title">Личные навыки</h3>
+          <div class="skills-tags-cloud">
+            <span class="skill-dark-tag">Внимание к деталям</span>
+            <span class="skill-dark-tag">Командная работа</span>
+            <span class="skill-dark-tag">Быстрая обучаемость</span>
+            <span class="skill-dark-tag">Чтение документации</span>
+            <span class="skill-dark-tag">Самодисциплина</span>
+            <span class="skill-dark-tag">Ответственность за дедлайн</span>
+            <span class="skill-dark-tag">Конструктивность в правках</span>
+          </div>
+        </div>
+
+        <div class="skills-box-dark">
+          <h3 class="skills-box-title">Инструменты</h3>
+          <div class="skills-tags-cloud">
+            <span class="skill-dark-tag">Visual Studio Code</span>
+            <span class="skill-dark-tag">MS Office</span>
+            <span class="skill-dark-tag">Figma</span>
+            <span class="skill-dark-tag">Chrome DevTools</span>
+            <span class="skill-dark-tag">npm / yarn / pnpm</span>
+            <span class="skill-dark-tag">Postman</span>
+            <span class="skill-dark-tag">Git & GitHub</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================================================================
+         9. КОНТАКТЫ И РЕЗЮМЕ
+         ================================================================== -->
+    <section class="figma-contact-section" id="resume">
+      
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+        <h2 class="heading-lg">
+          Есть классная идея для проекта?
+        </h2>
+        <div class="heading-lg text-orange">
+          Давайте обсудим!
+        </div>
+        <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 580px; margin-top: 8px;">
+          Открыт для предложений о работе и интересных проектах. Скачайте моё резюме в один клик или свяжитесь со мной напрямую.
+        </p>
+      </div>
+
+      <!-- Кнопка скачивания резюме -->
+      <div class="resume-action-banner">
+        <a href="resume.pdf" download="jokerfolio_Resume.pdf" class="btn-resume-figma">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span>Скачать резюме (PDF)</span>
+        </a>
+      </div>
+
+      <!-- Прямые контакты (без строки отправки email и без плашек рейтинга) -->
+      <div class="direct-contacts-row">
+        <a href="https://t.me/whatdouthinkboutme" target="_blank" rel="noopener noreferrer" class="contact-direct-pill">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.05-.49-.83-.27-1.49-.42-1.43-.88.03-.24.37-.49 1.02-.75 3.99-1.74 6.66-2.89 8.01-3.46 3.81-1.62 4.61-1.9 5.13-1.91.11 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.21-.04.38z"/></svg>
+          <span>Telegram</span>
+        </a>
+        <a href="mailto:dr.joker-sk@yandex.ru" class="contact-direct-pill">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+          <span>contact@jokerfolio.dev</span>
+        </a>
+      </div>
+
+    </section>
+
+    <!-- Подвал сайта -->
+    <footer class="figma-footer">
+      <p>© 2026 kiwwwataru</p>
+    </footer>
+
+  </main>
+
+  <!-- JavaScript -->
+  <script src="assets/js/main.js?v=20261012-6"></script>
+</body>
+</html>
